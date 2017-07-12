@@ -126,7 +126,7 @@ namespace ListPractice
             //     Console.Write("{0} ", numList[i]);
             // }
 
-            List<string> useMovie = new List<string> { "ALIENS", "MATRIX", "SHREK", "REACHER" };
+            List<string> useMovie = new List<string> { "ALIENS", "MATRIX", "KILL BILL", "REACHER" };
             List<string> moviesOrdered = new List<string>();
             string enterAnother = "YES";
             while (enterAnother == "YES")
@@ -144,11 +144,11 @@ namespace ListPractice
                 {
                     useMovie.Add(UserChoice);
                     moviesOrdered.Add(UserChoice);
-                    Console.WriteLine("Your movie has been added");
+                    Console.WriteLine("Your movie has been added and will be delivered shortly");
                 }
 
 
-                Console.WriteLine("Would you like to check out anouther movie : ");
+                Console.WriteLine("Would you like to check out another movie : ");
                 enterAnother = Console.ReadLine().ToUpper();
                 
             }
@@ -157,11 +157,17 @@ namespace ListPractice
                 {
 
                     Console.Write("The following movies have been ordered: ");
-
+                if(moviesOrdered.Count == 0)
+                {
+                    Console.WriteLine("You didnt order any movies");
+                }else
+                {
                     for (int i = 0; i < moviesOrdered.Count; i++)
                     {
                         Console.Write("{0}\n", moviesOrdered[i]);
                     }
+                }
+                    
 
                     System.Environment.Exit(1);
 
